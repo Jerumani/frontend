@@ -1,12 +1,8 @@
 import Index from "views/Index.jsx";
-import Profile from "views/examples/Profile.jsx";
-import Maps from "views/examples/Maps.jsx";
 import Register from "views/examples/Register.jsx";
 import Login from "views/examples/Login.jsx";
-import Tables from "views/examples/Tables.jsx";
-import Icons from "views/examples/Icons.jsx";
 import BookAppointment from "../src/views/patient/BookAppointment"
-import ViewaApointment from "../src/views/patient/ViewAppointment"
+import ViewApointment from "../src/views/patient/ViewAppointment"
 var routes = [
   {
     path: "/index",
@@ -26,7 +22,7 @@ var routes = [
     path: "/viewappointment",
     name: "View Appointments",
     icon: "ni ni-pin-3 text-orange",
-    component: Profile,
+    component: ViewApointment,
     layout: "/admin"
   },
   {

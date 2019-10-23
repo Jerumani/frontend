@@ -47,7 +47,7 @@ class BookAppointment extends React.Component {
                             </label>
                             <Input
                               className="form-control-alternative"
-                              value="lucky.jesse"
+                              // value="First Name"
                               name="firstName"
                               placeholder="First Name"
                               type="text"
@@ -62,7 +62,7 @@ class BookAppointment extends React.Component {
                             <Input
                               className="form-control-alternative"
                               name="middleName"
-                              value="middle name"
+                              // value="middle name"
                               placeholder="Middle Name"
                               type="text"
                             />
@@ -75,7 +75,7 @@ class BookAppointment extends React.Component {
                             </label>
                             <Input
                               className="form-control-alternative"
-                              value="lucky.jesse"
+                              // value="lucky.jesse"
                               name="lastName"
                               placeholder="Last Name"
                               type="text"
@@ -172,7 +172,7 @@ class BookAppointment extends React.Component {
                             </label>
                             <Input
                               className="form-control-alternative"
-                              value="New York"
+                              // value="New York"
                               name="speciality"
                               type="text"
                             />
