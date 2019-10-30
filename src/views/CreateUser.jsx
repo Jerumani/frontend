@@ -15,7 +15,7 @@ import {
   Col
 } from "reactstrap";
 // core components
-import UserHeader from "components/Headers/UserHeader.jsx";
+import Header from "components/Headers/Header.jsx";
 
 class CreateUser extends React.Component {
   constructor(props) {
@@ -43,7 +43,7 @@ class CreateUser extends React.Component {
   render() {
     return (
       <>
-        <UserHeader />
+        <Header />
         {/* Page content */}
         <Container className="mt--7" fluid>
           <Row>

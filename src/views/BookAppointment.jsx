@@ -14,7 +14,7 @@ import {
   Col
 } from "reactstrap";
 // core components
-import UserHeader from "components/Headers/UserHeader.jsx";
+import Header from "components/Headers/Header.jsx";
 import { throws } from "assert";
 
 class BookAppointment extends React.Component {
@@ -43,11 +43,11 @@ class BookAppointment extends React.Component {
   render() {
     return (
       <>
-        <UserHeader />
+        <Header />
         {/* Page content */}
         <Container className="mt--7" fluid>
           <Row>
-            <Col className="order-xl-1" xl="12">
+            <Col className="order-xl-1" xl="8">
               <Card className="bg-secondary shadow">
                 <CardHeader className="bg-white border-0">
                   <Row className="align-items-center">
@@ -164,7 +164,7 @@ class BookAppointment extends React.Component {
                       Appointment Details
                     </h6>
                     <div className="pl-lg-4">
-                      <Row>
+                      {/* <Row>
                         <Col lg="6">
                           <FormGroup>
                             <label className="form-control-label">
@@ -193,7 +193,7 @@ class BookAppointment extends React.Component {
                             />
                           </FormGroup>
                         </Col>
-                      </Row>
+                      </Row> */}
                       <Row>
                         <Col lg="12">
                           <FormGroup>
