@@ -152,8 +152,8 @@ class CreateUser extends React.Component {
                         this.state.firstName,
                         this.state.middleName,
                         this.state.lastName,
-                        this.state.emailAddress,
                         this.state.phoneNumber,
+                        this.state.emailAddress,
                         this.state.password
                       )
                     }>

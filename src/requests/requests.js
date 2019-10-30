@@ -1,8 +1,7 @@
 const axios = require("axios").default;
 const baseUrl = "https://texascancercenter.appspot.com/";
 
-const baseUrl = "";
-function createMedicalHistory(treatment, appointmentDate, doctorId, patientId) {
+function postMedicalHistory(treatment, appointmentDate, doctorId, patientId) {
   axios
     .post(baseUrl + "createMedicalHistory", {
       treatment: treatment,
@@ -36,29 +35,18 @@ function createAppointment(approved,doctorId,approvedDate,patientId,approverId) 
 }
 
 function getMedicalHistory() {
-  axios
-    .get(baseUrl + "getAllMedicalHistory", {})
-    .then(function(response) {
-      console.log(response);
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
+  return axios
+    .get(baseUrl + "getAllMedicalHistory", {});
+    
 }
 
 function getAppointments() {
-  axios
+  return axios
     .get(baseUrl + "getAllAppointments", {})
-    .then(function(response) {
-      console.log(response);
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
 }
 
 export {
-  createMedicalHistory,
+  postMedicalHistory,
   createAppointment,
   getMedicalHistory,
   getAppointments

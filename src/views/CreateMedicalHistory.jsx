@@ -1,7 +1,6 @@
 import React from "react";
 import {
-  CreateMedicalHistory,
-  createMedicalHistory
+  postMedicalHistory
 } from "../requests/requests";
 // reactstrap components
 import {
@@ -67,8 +66,8 @@ class CreateMedicalHistory extends React.Component {
                             </label>
                             <Input
                               className="form-control-alternative"
-                              value={this.state.firstName}
-                              name="firstName"
+                              value={this.state.treatment}
+                              name="treatment"
                               placeholder="First Name"
                               type="text"
                               onChange={this.handleInputChange}
@@ -82,8 +81,8 @@ class CreateMedicalHistory extends React.Component {
                             </label>
                             <Input
                               className="form-control-alternative"
-                              value={this.state.firstName}
-                              name="firstName"
+                              value={this.state.doctorId}
+                              name="doctorId"
                               placeholder="First Name"
                               type="number"
                               onChange={this.handleInputChange}
@@ -97,7 +96,7 @@ class CreateMedicalHistory extends React.Component {
                             </label>
                             <Input
                               className="form-control-alternative"
-                              value={this.state.firstName}
+                              value={this.state.patientId}
                               name="patientId"
                               placeholder="Patient Id"
                               type="number"
@@ -113,7 +112,7 @@ class CreateMedicalHistory extends React.Component {
                         color="primary"
                         type="button"
                         onClick={() =>
-                          createMedicalHistory(
+                          postMedicalHistory(
                             this.state.treatment,
                             Date.now(),
                             this.state.doctorId,
