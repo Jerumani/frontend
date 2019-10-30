@@ -15,8 +15,31 @@ import {
 } from "reactstrap";
 // core components
 import UserHeader from "components/Headers/UserHeader.jsx";
+import { throws } from "assert";
 
 class BookAppointment extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstName: "",
+      middleName: "",
+      lastName: "",
+      gender: "",
+      phoneNumber: "",
+      emailAddress: "",
+      speciality: ""
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === "radio" ? target.value : target.value;
+    const name = target.name;
+    this.setState({
+      [name]: value
+    });
+  }
   render() {
     return (
       <>
@@ -47,10 +70,11 @@ class BookAppointment extends React.Component {
                             </label>
                             <Input
                               className="form-control-alternative"
-                              // value="First Name"
+                              value={this.state.firstName}
                               name="firstName"
                               placeholder="First Name"
                               type="text"
+                              onChange={this.handleInputChange}
                             />
                           </FormGroup>
                         </Col>
@@ -62,9 +86,10 @@ class BookAppointment extends React.Component {
                             <Input
                               className="form-control-alternative"
                               name="middleName"
-                              // value="middle name"
+                              value={this.state.middleName}
                               placeholder="Middle Name"
                               type="text"
+                              onChange={this.handleInputChange}
                             />
                           </FormGroup>
                         </Col>
@@ -75,10 +100,11 @@ class BookAppointment extends React.Component {
                             </label>
                             <Input
                               className="form-control-alternative"
-                              // value="lucky.jesse"
+                              value={this.state.lastName}
                               name="lastName"
                               placeholder="Last Name"
                               type="text"
+                              onChange={this.handleInputChange}
                             />
                           </FormGroup>
                         </Col>
@@ -90,9 +116,10 @@ class BookAppointment extends React.Component {
                             <Input
                               className="form-control-alternative"
                               value=""
-                              id="phoneNumber"
+                              id="gender"
                               placeholder="Phone Number"
                               type="text"
+                              onChange={this.handleInputChange}
                             />
                           </FormGroup>
                         </Col>
@@ -105,10 +132,11 @@ class BookAppointment extends React.Component {
                             </label>
                             <Input
                               className="form-control-alternative"
-                              value=""
+                              value={this.state.phoneNumber}
                               id="phoneNumber"
                               placeholder="Phone Number"
                               type="number"
+                              onChange={this.handleInputChange}
                             />
                           </FormGroup>
                         </Col>
@@ -120,9 +148,11 @@ class BookAppointment extends React.Component {
                             <Input
                               className="form-control-alternative"
                               defaultValue="Jesse"
+                              value={this.state.emailAddress}
                               name="emailAddress"
                               placeholder="Email Address"
                               type="email"
+                              onChange={this.handleInputChange}
                             />
                           </FormGroup>
                         </Col>
@@ -172,9 +202,10 @@ class BookAppointment extends React.Component {
                             </label>
                             <Input
                               className="form-control-alternative"
-                              // value="New York"
+                              value={this.state.speciality}
                               name="speciality"
                               type="text"
+                              onChange={this.handleInputChange}
                             />
                           </FormGroup>
                         </Col>
