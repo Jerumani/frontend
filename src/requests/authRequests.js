@@ -17,10 +17,12 @@ function handleLogIn(password, email, props) {
       });
 }
 
-function handleRegistration(firstName, lastName, phoneNumber, email, password) {
+function handleRegistration(firstName, middleName, lastName, phoneNumber, email, password) {
+  console.log(firstName)
   return axios
       .post(baseUrl + "signup", {
         firstName: firstName,
+        middleName: middleName,
         lastName: lastName,
         phoneNumber: phoneNumber,
         email: email,

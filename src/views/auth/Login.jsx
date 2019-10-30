@@ -39,7 +39,7 @@ class Login extends React.Component {
                       placeholder="Email"
                       type="email"
                       onChange={e =>
-                        this.setState({ password: e.target.value })
+                        this.setState({ email: e.target.value })
                       }
                     />
                   </InputGroup>
@@ -68,7 +68,6 @@ class Login extends React.Component {
                   />
                   <label
                     className="custom-control-label"
-                    htmlFor=" customCheckLogin"
                   >
                     <span className="text-muted">Remember me</span>
                   </label>
