@@ -1,48 +1,65 @@
 const axios = require("axios").default;
-const baseUrl = ""
+const baseUrl = "https://texascancercenter.appspot.com/";
+
+const baseUrl = "";
 function createMedicalHistory(treatment, appointmentDate, doctorId, patientId) {
   axios
-    .post("", {
-      treatment: req.body.treatment,
-      appointmentDate: req.body.appointmentDate,
-      doctorId: req.body.doctorId,
-      patientId: req.body.patientId
+    .post(baseUrl + "createMedicalHistory", {
+      treatment: treatment,
+      appointmentDate: appointmentDate,
+      doctorId: doctorId,
+      patientId: patientId
     })
     .then(function(response) {
-        console.log(response)
+      console.log(response);
     })
     .catch(function(error) {
-        console.log(error)
+      console.log(error);
     });
 }
 
-
-function createAppointment(){
-    axios.post("",{
-
-    }).then(function(response) {
-        console.log(response)
-    }).catch(function(error) {
-        console.log(error)
+function createAppointment(approved,doctorId,approvedDate,patientId,approverId) {
+  axios
+    .post(baseUrl + "createAppointment", {
+      approved: approved,
+      doctorId: doctorId,
+      approvedDate: approvedDate,
+      patientId: patientId,
+      approverId: approverId
     })
+    .then(function(response) {
+      console.log(response);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
 }
 
-function getMedicalHistory(){
-    axios.get("",{
-
-    }).then(function(response){
-        console.log(response)
-    }).catch(function(error){
-        console.log(error)
+function getMedicalHistory() {
+  axios
+    .get(baseUrl + "getAllMedicalHistory", {})
+    .then(function(response) {
+      console.log(response);
     })
+    .catch(function(error) {
+      console.log(error);
+    });
 }
 
-function getAppointments(){
-    axios.get("",{
-
-    }).then(function(response){
-        console.log(response)
-    }).catch(function(error){
-        console.log(error)
+function getAppointments() {
+  axios
+    .get(baseUrl + "getAllAppointments", {})
+    .then(function(response) {
+      console.log(response);
     })
+    .catch(function(error) {
+      console.log(error);
+    });
 }
+
+export {
+  createMedicalHistory,
+  createAppointment,
+  getMedicalHistory,
+  getAppointments
+};

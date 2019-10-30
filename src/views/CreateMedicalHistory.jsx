@@ -1,5 +1,8 @@
 import React from "react";
-
+import {
+  CreateMedicalHistory,
+  createMedicalHistory
+} from "../requests/requests";
 // reactstrap components
 import {
   Button,
@@ -105,7 +108,19 @@ class CreateMedicalHistory extends React.Component {
                       </Row>
                     </div>
                     <div className="text-center">
-                      <Button className="mt-4" color="primary" type="button">
+                      <Button
+                        className="mt-4"
+                        color="primary"
+                        type="button"
+                        onClick={() =>
+                          createMedicalHistory(
+                            this.state.treatment,
+                            Date.now(),
+                            this.state.doctorId,
+                            this.state.patientId
+                          )
+                        }
+                      >
                         Submit Medical History
                       </Button>
                     </div>

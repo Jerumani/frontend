@@ -15,8 +15,7 @@ import {
 } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.jsx";
-import { throws } from "assert";
-
+import {createAppointment} from "../requests/requests"
 class BookAppointment extends React.Component {
   constructor(props) {
     super(props);
@@ -210,6 +209,11 @@ class BookAppointment extends React.Component {
                           </FormGroup>
                         </Col>
                       </Row>
+                    </div>
+                    <div className="text-center">
+                      <Button className="mt-4" color="primary" type="button" onClick={()=>createAppointment()}>
+                        Book an appointment
+                      </Button>
                     </div>
                   </Form>
                 </CardBody>
